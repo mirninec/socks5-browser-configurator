@@ -1,0 +1,29 @@
+{
+    "name": "Socks5 Configurator",
+    "description": "Configuring a browser via a SOCKS5 proxy with a flexible bypass list",
+    "version": "1.0.0",
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": [
+        "storage",
+        "proxy"
+    ],
+    "action": {
+        "default_icon": {
+            "16": "/images/icon.16.png",
+            "32": "/images/icon.32.png",
+            "48": "/images/icon.48.png",
+            "128": "/images/icon.128.png"
+        },
+        "default_title": "Socks5 Proxy"
+    },
+    "options_page": "options.html",
+    "icons": {
+        "16": "/images/icon.16.png",
+        "32": "/images/icon.32.png",
+        "48": "/images/icon.48.png",
+        "128": "/images/icon.128.png"
+    },
+    "manifest_version": 3
+}

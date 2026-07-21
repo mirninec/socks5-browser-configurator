@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Socks5 Chrome</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="messageStack" class="message-stack" aria-live="polite"></div>
+
+    <main class="page">
+        <section class="card">
+            <div class="card-header">
+                <div class="card-title-group">
+                    <h1 class="card-title">Socks5 Proxy</h1>
+                    <span id="socks5status" class="status-badge">Не активно</span>
+                </div>
+
+                <label class="switch">
+                    <input type="checkbox" id="socks5switch">
+                    <span class="switch-slider"></span>
+                </label>
+            </div>
+
+            <div class="proxy-fields">
+                <div class="form-group proxy-host-group">
+                    <label class="label" for="socks5host">
+                        Хост
+                    </label>
+
+                    <input id="socks5host" class="input" type="text" placeholder="localhost или 127.0.0.1"
+                        autocomplete="off" spellcheck="false">
+                </div>
+
+                <div class="form-group proxy-port-group">
+                    <label class="label" for="socks5port">
+                        Порт
+                    </label>
+
+                    <input id="socks5port" class="input" type="text" inputmode="numeric" placeholder="1080"
+                        autocomplete="off" spellcheck="false">
+                </div>
+            </div>
+        </section>
+
+        <section class="card bypass-card">
+            <div class="card-header">
+                <div class="card-title-group">
+                    <h2 class="card-title">Bypass List</h2>
+                    <span id="bypassstatus" class="status-badge">Не активно</span>
+                </div>
+        
+                <label class="switch">
+                    <input type="checkbox" id="bypassswitch">
+                    <span class="switch-slider"></span>
+                </label>
+            </div>
+        
+            <p id="bypasshint" class="hint">
+                Домены из этого списка будут открываться напрямую, без SOCKS5-прокси.
+            </p>
+
+            <div class="add-domain-form">
+                <div class="form-group add-domain-input-wrap">
+                    <label class="label" for="newdomain">
+                        Новый домен
+                    </label>
+
+                    <input id="newdomain" class="input" type="text" placeholder="example.com или *.example.com"
+                        autocomplete="off" spellcheck="false">
+                </div>
+
+                <button id="adddomain" class="button secondary-button" type="button">
+                    Добавить домен
+                </button>
+            </div>
+
+            <div class="bypass-list-wrap">
+                <ul id="bypasslist" class="bypass-list"></ul>
+            </div>
+        </section>
+
+        <section class="actions">
+            <button id="save" class="button" type="button">
+                Сохранить
+            </button>
+
+            <button id="ing" class="button loading-button" type="button" disabled>
+                <span class="spinner"></span>
+                Сохранение...
+            </button>
+        </section>
+    </main>
+
+    <script src="options.js"></script>
+</body>
+
+</html>
